@@ -10,6 +10,7 @@ spec:
       version: "0.1.7"
   values:
     # Unified configuration for disaggregated prefill setup
+    fullnameOverride: vllm-stack
     servingEngineSpec:
       enableEngine: true
       runtimeClassName: "nvidia"

@@ -1,20 +1,20 @@
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: vllm-production-stack
-#   namespace: flux-system
-# spec:
-#   interval: 10m
-#   prune: true
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./apps/vllm-production-stack/overlay/staging-gpu
-#   dependsOn:
-#     - name: app-sources-helm
-#     - name: infra-app-namespace
-    # - name: infra-pvc
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: vllm-production-stack
+  namespace: flux-system
+spec:
+  interval: 10m
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/vllm-production-stack/overlay/staging-gpu
+  dependsOn:
+    - name: app-sources-helm
+    - name: infra-app-namespace
+    - name: infra-pvc
 # ---     
 # apiVersion: kustomize.toolkit.fluxcd.io/v1
 # kind: Kustomization

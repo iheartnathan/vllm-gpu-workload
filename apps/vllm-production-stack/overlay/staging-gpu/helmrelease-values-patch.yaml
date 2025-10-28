@@ -40,10 +40,10 @@ spec:
               path: /health
               port: 8000
       tolerations:
-        - key: "nvidia.com/gpu"
-          operator: "Equal"
+        - key: nvidia.com/gpu
+          operator: Equal
           value: "true"
-          effect: "NoSchedule"
+          effect: NoSchedule
       modelSpec:
         # Prefill node configuration
         - name: "llama-prefill"
@@ -78,7 +78,7 @@ spec:
           nodeSelectorTerms:
             - matchExpressions:
               - key: nvidia.com/mig.capable
-                operator: "Exists"
+                operator: Exists
           labels:
             model: "llama-prefill"
         # Decode node configuration
@@ -113,7 +113,7 @@ spec:
           nodeSelectorTerms:
             - matchExpressions:
               - key: nvidia.com/mig.capable
-                operator: "Exists"
+                operator: Exists
           labels:
             model: "llama-decode"
     routerSpec:
@@ -166,4 +166,4 @@ spec:
       nodeSelectorTerms:
         - matchExpressions:
           - key: nvidia.com/mig.capable
-            operator: "Exists"
+            operator: Exists

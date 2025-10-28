@@ -130,6 +130,10 @@ spec:
           labels:
             model: "llama-decode"
     routerSpec:
+      tolerations:
+        - key: "nvidia.com/gpu"
+          operator: "Exists"
+          effect: "NoSchedule"
       enableRouter: true
       repository: "lmcache/lmstack-router"
       tag: "pd-05-26"

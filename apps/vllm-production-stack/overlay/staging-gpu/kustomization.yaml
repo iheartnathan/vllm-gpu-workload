@@ -6,5 +6,5 @@ patches:
   - path: helmrelease-values-patch.yaml
     target:
       kind: HelmRelease
-      name: vllm-production-stack
+      name: vllm-stack
       namespace: flux-system

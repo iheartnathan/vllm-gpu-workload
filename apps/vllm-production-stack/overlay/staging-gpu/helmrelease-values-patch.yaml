@@ -7,7 +7,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: 1.28.0
+      version: "0.1.7"
   values:
     # Unified configuration for disaggregated prefill setup
     servingEngineSpec:
@@ -71,7 +71,9 @@ spec:
             nixlEnableGc: true
             enablePD: true
             cpuOffloadingBufferSize: 0
-          hf_token: <your-hf-token>
+          hfToken:
+            secretName: "hf-token"
+            secretKey: "HUGGING_FACE_HUB_TOKEN"
           nodeSelectorTerms:
             - matchExpressions:
               - key: nvidia.com/mig.capable
@@ -106,7 +108,9 @@ spec:
             nixlBufferDevice: "cuda"
             nixlEnableGc: true
             enablePD: true
-          hf_token: <your-hf-token>
+          hfToken:
+            secretName: "hf-token"
+            secretKey: "HUGGING_FACE_HUB_TOKEN"
           nodeSelectorTerms:
             - matchExpressions:
               - key: nvidia.com/mig.capable

@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: vllm-stack
-      version: "0.1.7"                 # pin/adjust as you prefer
+      version: "*"                 # pin/adjust as you prefer
       sourceRef:
         kind: HelmRepository
         name: vllm-production-stack

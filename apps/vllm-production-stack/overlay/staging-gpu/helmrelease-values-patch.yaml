@@ -41,8 +41,7 @@ spec:
               port: 8000
       tolerations:
         - key: nvidia.com/gpu
-          operator: Equal
-          value: "true"
+          operator: Exists
           effect: NoSchedule
       modelSpec:
         # Prefill node configuration

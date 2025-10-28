@@ -74,10 +74,16 @@ spec:
           hfToken:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
-          nodeSelectorTerms:
-            - matchExpressions:
-              - key: nvidia.com/mig.capable
-                operator: Exists
+          # nodeSelectorTerms:
+          #   - matchExpressions:
+          #     - key: nvidia.com/mig.capable
+          #       operator: Exists
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                    - key: nvidia.com/mig.capable
+                      operator: Exists
           labels:
             model: "llama-prefill"
         # Decode node configuration
@@ -109,10 +115,16 @@ spec:
           hfToken:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
-          nodeSelectorTerms:
-            - matchExpressions:
-              - key: nvidia.com/mig.capable
-                operator: Exists
+          # nodeSelectorTerms:
+          #   - matchExpressions:
+          #     - key: nvidia.com/mig.capable
+          #       operator: Exists
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                    - key: nvidia.com/mig.capable
+                      operator: Exists
           labels:
             model: "llama-decode"
     routerSpec:
@@ -162,7 +174,13 @@ spec:
         failureThreshold: 3
         httpGet:
           path: /health
-      nodeSelectorTerms:
-        - matchExpressions:
-          - key: nvidia.com/mig.capable
-            operator: Exists
+      # nodeSelectorTerms:
+      #   - matchExpressions:
+      #     - key: nvidia.com/mig.capable
+      #       operator: Exists
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+                - key: nvidia.com/mig.capable
+                  operator: Exists

@@ -53,6 +53,7 @@ spec:
           requestCPU: 8
           requestMemory: "30Gi"
           requestGPU: 1
+          requestGPUType: nvidia.com/mig-2g.24gb
           pvcStorage: "50Gi"
           vllmConfig:
             enableChunkedPrefill: false
@@ -95,6 +96,7 @@ spec:
           requestCPU: 8
           requestMemory: "30Gi"
           requestGPU: 1
+          requestGPUType: nvidia.com/mig-2g.24gb
           pvcStorage: "50Gi"
           vllmConfig:
             enableChunkedPrefill: false

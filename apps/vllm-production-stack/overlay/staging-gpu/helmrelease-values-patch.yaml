@@ -40,9 +40,9 @@ spec:
               path: /health
               port: 8000
       tolerations:
-        - key: nvidia.com/gpu
-          operator: Exists
-          effect: NoSchedule
+        - key: "nvidia.com/gpu"
+          operator: "Exists"
+          effect: "NoSchedule"
       modelSpec:
         # Prefill node configuration
         - name: "llama-prefill"

@@ -72,7 +72,7 @@ spec:
             nixlEnableGc: true
             enablePD: true
             cpuOffloadingBufferSize: 0
-          hfToken:
+          hf_token:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
           # nodeSelectorTerms:
@@ -114,7 +114,7 @@ spec:
             nixlBufferDevice: "cuda"
             nixlEnableGc: true
             enablePD: true
-          hfToken:
+          hf_token:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
           # nodeSelectorTerms:

@@ -75,10 +75,6 @@ spec:
           hf_token:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
-          # nodeSelectorTerms:
-          #   - matchExpressions:
-          #     - key: nvidia.com/mig.capable
-          #       operator: Exists
           affinity:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
@@ -117,10 +113,6 @@ spec:
           hf_token:
             secretName: "hf-token"
             secretKey: "HUGGING_FACE_HUB_TOKEN"
-          # nodeSelectorTerms:
-          #   - matchExpressions:
-          #     - key: nvidia.com/mig.capable
-          #       operator: Exists
           affinity:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
@@ -146,11 +138,11 @@ spec:
       enablePD: true
       resources:
         requests:
-          cpu: "4"
-          memory: "16G"
+          cpu: "3"
+          memory: "6G"
         limits:
-          cpu: "4"
-          memory: "32G"
+          cpu: "3"
+          memory: "10G"
       labels:
         environment: "router"
         release: "router"
@@ -184,9 +176,9 @@ spec:
       #   - matchExpressions:
       #     - key: nvidia.com/mig.capable
       #       operator: Exists
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-                - key: nvidia.com/mig.capable
-                  operator: Exists
+      # affinity:
+      #   nodeAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #           - key: nvidia.com/mig.capable
+      #             operator: Exists

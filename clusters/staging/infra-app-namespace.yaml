@@ -4,7 +4,7 @@ metadata:
   name: infra-app-namespace
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 10m
   path: ./infrastructure/namespace/staging
   prune: false
   wait: true

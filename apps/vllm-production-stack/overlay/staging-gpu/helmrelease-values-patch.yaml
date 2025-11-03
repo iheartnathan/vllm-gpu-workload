@@ -160,9 +160,9 @@ spec:
           path: /health
       # Startup probe configuration.
       startupProbe:
-        initialDelaySeconds: 5
-        periodSeconds: 5
-        failureThreshold: 3
+        initialDelaySeconds: 180
+        periodSeconds: 10
+        failureThreshold: 5
         httpGet:
           path: /health
       # Readiness probe configuration.

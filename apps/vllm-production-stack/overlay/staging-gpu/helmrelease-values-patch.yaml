@@ -58,7 +58,7 @@ spec:
           vllmConfig:
             enableChunkedPrefill: false
             enablePrefixCaching: false
-            maxModelLen: 32000
+            maxModelLen: 8000
             v1: 1
           lmcacheConfig:
             enabled: true
@@ -97,7 +97,7 @@ spec:
           vllmConfig:
             enableChunkedPrefill: false
             enablePrefixCaching: false
-            maxModelLen: 32000
+            maxModelLen: 8000
             v1: 1
           lmcacheConfig:
             enabled: true

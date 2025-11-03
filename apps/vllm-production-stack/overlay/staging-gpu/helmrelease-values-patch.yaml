@@ -47,7 +47,7 @@ spec:
         # Prefill node configuration
         - name: "llama-prefill"
           repository: "lmcache/vllm-openai"
-          tag: "2025-05-17-v1"
+          tag: "latest"
           modelURL: "meta-llama/Llama-3.1-8B-Instruct"
           replicaCount: 1
           requestCPU: 8
@@ -86,7 +86,7 @@ spec:
         # Decode node configuration
         - name: "llama-decode"
           repository: "lmcache/vllm-openai"
-          tag: "2025-05-17-v1"
+          tag: "latest"
           modelURL: "meta-llama/Llama-3.1-8B-Instruct"
           replicaCount: 1
           requestCPU: 8
@@ -128,7 +128,7 @@ spec:
           effect: "NoSchedule"
       enableRouter: true
       repository: "lmcache/lmstack-router"
-      tag: "pd-05-26"
+      tag: "latest"
       replicaCount: 1
       containerPort: 8000
       servicePort: 80

@@ -5,7 +5,8 @@ metadata:
   name: vllm-stack
   namespace: flux-system
 spec:
-  interval: 15m
+  interval: 20m
+  timeout: 15m
   chart:
     spec:
       chart: vllm-stack

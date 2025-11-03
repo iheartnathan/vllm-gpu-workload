@@ -17,7 +17,7 @@ spec:
       containerPort: 8000
       # -- Startup probe configuration
       startupProbe:
-        initialDelaySeconds: 15
+        initialDelaySeconds: 600
         periodSeconds: 10
         failureThreshold: 60
         httpGet:

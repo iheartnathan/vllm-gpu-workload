@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: vllm-production-stack
         namespace: flux-system
-      interval: 15m
+      interval: 20mm
   install:
     remediation:
       retries: 3

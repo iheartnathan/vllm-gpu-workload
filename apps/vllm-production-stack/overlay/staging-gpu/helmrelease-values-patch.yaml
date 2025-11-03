@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       version: "0.1.7"
+      interval: 15m
   values:
     # Unified configuration for disaggregated prefill setup
     fullnameOverride: vllm-stack

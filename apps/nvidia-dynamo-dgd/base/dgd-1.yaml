@@ -14,7 +14,7 @@ spec:
         mainContainer:
           image: nvcr.io/nvidia/ai-dynamo/vllm-runtime:0.6.1
     VllmDecodeWorker:
-      dynamoNamespace: vllm-disagg
+      dynamoNamespace: default
       envFromSecret: hf-token
       componentType: worker
       subComponentType: decode

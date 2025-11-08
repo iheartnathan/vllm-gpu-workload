@@ -13,7 +13,7 @@ spec:
         mainContainer:
           image: gitlab-master.nvidia.com:5005/dl/ai-dynamo/dynamo/dynamo:vllm-1029
     VllmDecodeWorker:
-      envFromSecret: hf-token-secret
+      envFromSecret: hf-token
       dynamoNamespace: vllm-agg
       componentType: worker
       replicas: 1
@@ -21,6 +21,11 @@ spec:
         limits:
           gpu: "1"
       extraPodSpec:
+        tolerations:
+          - key: "nvidia.com/gpu"
+            operator: "Equal"
+            value: "true"
+            effect: "NoSchedule"
         mainContainer:
           image: gitlab-master.nvidia.com:5005/dl/ai-dynamo/dynamo/dynamo:vllm-1029
           workingDir: /workspace/examples/backends/vllm

@@ -46,5 +46,6 @@
 #   path: ./apps/nvidia-dynamo-dgd/base/
 #   dependsOn:
 #     - name: app-sources-helm
+#     - name: infra-app-namespace
 #     - name: nvidia-dynamo
 

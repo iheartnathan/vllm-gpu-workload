@@ -24,9 +24,17 @@ spec:
       extraPodSpec:
         tolerations:
           - key: "nvidia.com/gpu"
-            operator: "Equal"
-            value: "true"
+            operator: "Exists"
             effect: "NoSchedule"
+        affinity:
+          nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: nvidia.com/gpu.present
+                        operator: In
+                        values:
+                          - "true"
         mainContainer:
           image: nvcr.io/nvidia/ai-dynamo/vllm-runtime:0.6.1
           workingDir: /workspace/examples/backends/vllm

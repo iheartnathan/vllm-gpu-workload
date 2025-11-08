@@ -8,4 +8,4 @@ spec:
     operator:
       runtimeClass: nvidia-container-runtime
     mig:
-      strategy: mixed
+      strategy: single

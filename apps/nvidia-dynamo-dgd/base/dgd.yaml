@@ -3,6 +3,7 @@ apiVersion: nvidia.com/v1alpha1
 kind: DynamoGraphDeployment
 metadata:
   name: vllm-agg
+  namespace: default
 spec:
   services:
     Frontend:

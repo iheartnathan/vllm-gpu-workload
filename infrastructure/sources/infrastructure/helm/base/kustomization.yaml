@@ -5,3 +5,4 @@ resources:
   - cloudnative-pg.yaml
   - nvidia-gpu-operator.yaml
   - sealed-secrets.yaml
+  - nvidia-dynamo.yaml

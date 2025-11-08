@@ -31,21 +31,21 @@
 #   path: ./apps/open-webui/overlay/staging
 #   dependsOn:
 #     - name: apps-ollama 
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: nvidia-dynamo-dgd
-  namespace: flux-system
-spec:
-  interval: 10m
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: ./apps/nvidia-dynamo-dgd/base/
-  dependsOn:
-    - name: app-sources-helm
-    - name: infra-app-namespace
-    - name: nvidia-dynamo
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: nvidia-dynamo-dgd
+#   namespace: flux-system
+# spec:
+#   interval: 10m
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#   path: ./apps/nvidia-dynamo-dgd/base/
+#   dependsOn:
+#     - name: app-sources-helm
+#     - name: infra-app-namespace
+#     - name: nvidia-dynamo
 

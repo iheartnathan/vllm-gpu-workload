@@ -6,7 +6,7 @@ metadata:
 spec:
   services:
     Frontend:
-      dynamoNamespace: vllm-agg
+      dynamoNamespace: default
       componentType: frontend
       replicas: 1
       extraPodSpec:
@@ -14,7 +14,7 @@ spec:
           image: gitlab-master.nvidia.com:5005/dl/ai-dynamo/dynamo/dynamo:vllm-1029
     VllmDecodeWorker:
       envFromSecret: hf-token
-      dynamoNamespace: vllm-agg
+      dynamoNamespace: default
       componentType: worker
       replicas: 1
       resources:
